@@ -11,7 +11,7 @@ type
 
   public
     property Nome: string read getNome write setNome;
-    function Latir: string;
+    function Latir: string; virtual;
   end;
 
 implementation
