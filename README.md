@@ -1,7 +1,7 @@
 # lab-delphi
 Repositório com pequenas aplicações afim de estudo
 
-## Material de estuo
+## Material de estudo
 
 ### Orientação a objetos
 * Playlist - POO para Iniciantes Delphi, Thulio Bittencourt
