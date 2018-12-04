@@ -29,8 +29,6 @@ object frmMain: TfrmMain
     OpenedWidth = 200
     Placement = svpLeft
     TabOrder = 0
-    ExplicitLeft = 1
-    ExplicitTop = 23
     object catMenu: TCategoryButtons
       Left = 0
       Top = -25
@@ -85,8 +83,6 @@ object frmMain: TfrmMain
     TabOrder = 2
     object sheetTNetHTTPClient: TTabSheet
       Caption = 'TNetHTTPClient'
-      ExplicitLeft = -12
-      ExplicitTop = 16
       object Label2: TLabel
         Left = 3
         Top = 3

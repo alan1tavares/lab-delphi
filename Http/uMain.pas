@@ -32,7 +32,7 @@ var
 
 implementation
 
-uses uBoxTools, uModelViaCep;
+uses uBoxTools, uModelViaCep, uRequestAdress;
 
 {$R *.dfm}
 
@@ -40,12 +40,15 @@ procedure TfrmMain.btBuscarCepClick(Sender: TObject);
 var
   cep: integer;
   mensagem: String;
+  RequestCep: TRequestAdress;
 begin
-  cep := strToInt(edCep.Text);
-  mensagem := ModelViaCep.buscarCep(cep);
+//  cep := strToInt(edCep.Text);
+//  mensagem := ModelViaCep.buscarCep(cep);
+//
+//  ShowMessage(mensagem+'Teste');
 
-  ShowMessage(mensagem+'Teste');
-
+  RequestCep := TRequestAdress.Create(60510196);
+  ShowMessage(RequestCep.Bairro);
 
 end;
 
