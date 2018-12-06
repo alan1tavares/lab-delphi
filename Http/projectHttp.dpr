@@ -4,7 +4,8 @@ uses
   Vcl.Forms,
   uMain in 'uMain.pas' {frmMain},
   uBoxTools in 'uBoxTools.pas',
-  uModelViaCep in 'uModelViaCep.pas' {ModelViaCep: TDataModule};
+  uModelViaCep in 'uModelViaCep.pas' {ModelViaCep: TDataModule},
+  uRequestAdress in 'Model\uRequestAdress.pas';
 
 {$R *.res}
 

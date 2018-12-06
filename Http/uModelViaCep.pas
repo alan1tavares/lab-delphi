@@ -31,8 +31,9 @@ var
 begin
   conteudo := 'não deu certo';
 
-//  NetHTTPRequest1.Get('https://viacep.com.br/ws/' + IntToStr(cep) + '/json/');
-  conteudo := NetHTTPRequest1.Get('https://viacep.com.br/ws/01003000/json/unicode/').ContentAsString;
+  // NetHTTPRequest1.Get('https://viacep.com.br/ws/' + IntToStr(cep) + '/json/');
+  conteudo := NetHTTPRequest1.Get
+    ('https://viacep.com.br/ws/01003000/json/unicode/').ContentAsString;
 
   Result := conteudo;
 end;

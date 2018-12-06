@@ -53,15 +53,13 @@ var
   JSONStringAdress: String;
 
 begin
-
   HttpClient := THttpClient.Create;
-  JSONStringAdress := HttpClient.Get
-    ('https://viacep.com.br/ws/'+ IntToStr(Cep) +'/json/unicode/').ContentAsString;
+  JSONStringAdress := HttpClient.Get('https://viacep.com.br/ws/' + IntToStr(Cep)
+    + '/json/unicode/').ContentAsString;
 
   // AdressInJSON.Create(JSONStringAdress);
   AdressInJSON := TJSONObject.ParseJSONValue
     (TEncoding.UTF8.GetBytes(JSONStringAdress), 0) as TJSONObject;
-
 end;
 
 function TRequestAdress.GetBairro: String;
@@ -71,22 +69,22 @@ end;
 
 function TRequestAdress.GetCep: String;
 begin
-   Result := AdressInJSON.GetValue('cep').Value;
+  Result := AdressInJSON.GetValue('cep').Value;
 end;
 
 function TRequestAdress.GetComplemento: String;
 begin
-   Result := AdressInJSON.GetValue('complemento').Value;
+  Result := AdressInJSON.GetValue('complemento').Value;
 end;
 
 function TRequestAdress.GetGia: String;
 begin
-   Result := AdressInJSON.GetValue('gia').Value;
+  Result := AdressInJSON.GetValue('gia').Value;
 end;
 
 function TRequestAdress.GetIbge: String;
 begin
-   Result := AdressInJSON.GetValue('ibge').Value;
+  Result := AdressInJSON.GetValue('ibge').Value;
 end;
 
 function TRequestAdress.GetLocalidade: String;
@@ -96,17 +94,17 @@ end;
 
 function TRequestAdress.GetLogradouro: String;
 begin
-   Result := AdressInJSON.GetValue('logradouro').Value;
+  Result := AdressInJSON.GetValue('logradouro').Value;
 end;
 
 function TRequestAdress.GetUf: String;
 begin
-   Result := AdressInJSON.GetValue('uf').Value;
+  Result := AdressInJSON.GetValue('uf').Value;
 end;
 
 function TRequestAdress.GetUnidade: String;
 begin
-   Result := AdressInJSON.GetValue('unidade').Value;
+  Result := AdressInJSON.GetValue('unidade').Value;
 end;
 
 end.
