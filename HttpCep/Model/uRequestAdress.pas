@@ -31,9 +31,9 @@ type
     property Ibge: String read GetIbge;
     property Gia: String read GetGia;
 
-    Constructor Create(Cep: integer); overload;
+    Constructor Create(Cep: String); overload;
 
-    procedure loadAdress(Cep: integer);
+    procedure loadAdress(Cep: String);
   end;
 
 implementation
@@ -42,29 +42,34 @@ implementation
 uses
   System.Net.HttpClient, System.SysUtils;
 
-constructor TRequestAdress.Create(Cep: integer);
+constructor TRequestAdress.Create(Cep: String);
 begin
   loadAdress(Cep);
 end;
 
-procedure TRequestAdress.loadAdress(Cep: integer);
+procedure TRequestAdress.loadAdress(Cep: String);
 var
   HttpClient: THttpClient;
   JSONStringAdress: String;
 
 begin
   HttpClient := THttpClient.Create;
-  JSONStringAdress := HttpClient.Get('https://viacep.com.br/ws/' + IntToStr(Cep)
+  JSONStringAdress := HttpClient.Get('https://viacep.com.br/ws/' + Cep
     + '/json/unicode/').ContentAsString;
 
-  // AdressInJSON.Create(JSONStringAdress);
   AdressInJSON := TJSONObject.ParseJSONValue
     (TEncoding.UTF8.GetBytes(JSONStringAdress), 0) as TJSONObject;
+  if AdressInJSON.Get('erro') <> nil then
+    raise Exception.Create('InvalidCep');
 end;
 
 function TRequestAdress.GetBairro: String;
 begin
+try
   Result := AdressInJSON.GetValue('bairro').Value;
+finally
+
+end;
 end;
 
 function TRequestAdress.GetCep: String;
@@ -89,7 +94,7 @@ end;
 
 function TRequestAdress.GetLocalidade: String;
 begin
-
+  Result := AdressInJSON.GetValue('localidade').Value;
 end;
 
 function TRequestAdress.GetLogradouro: String;
