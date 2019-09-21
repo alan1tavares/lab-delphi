@@ -2,13 +2,13 @@ program prjExercicio02;
 
 uses
   Vcl.Forms,
-  untExercicio02 in 'untExercicio02.pas' {Form1};
+  untExercicio02 in 'untExercicio02.pas' {frmExercicio02};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TfrmExercicio02, frmExercicio02);
   Application.Run;
 end.

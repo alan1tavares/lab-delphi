@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
 
 type
-  TForm1 = class(TForm)
+  TfrmExercicio02 = class(TForm)
     edtEntrada: TEdit;
     lblResultado: TLabel;
     btnCelsiusFahrenheit: TButton;
@@ -21,13 +21,13 @@ type
   end;
 
 var
-  Form1: TForm1;
+  frmExercicio02: TfrmExercicio02;
 
 implementation
 
 {$R *.dfm}
 
-procedure TForm1.btnCelsiusFahrenheitClick(Sender: TObject);
+procedure TfrmExercicio02.btnCelsiusFahrenheitClick(Sender: TObject);
 var
   Fahrenheit: double;
 begin
@@ -35,7 +35,7 @@ begin
   lblResultado.Caption := FloatToStr(Fahrenheit);
 end;
 
-procedure TForm1.btnFahrenheitCelsiusClick(Sender: TObject);
+procedure TfrmExercicio02.btnFahrenheitCelsiusClick(Sender: TObject);
 var
   Celsius: double;
 begin

@@ -1,7 +1,7 @@
-object frmExercicio02: TfrmExercicio02
+object frmExercicio03: TfrmExercicio03
   Left = 0
   Top = 0
-  Caption = 'Exercicio 02'
+  Caption = 'Exercicio 03'
   ClientHeight = 201
   ClientWidth = 447
   Color = clBtnFace
@@ -14,36 +14,36 @@ object frmExercicio02: TfrmExercicio02
   PixelsPerInch = 96
   TextHeight = 13
   object lblResultado: TLabel
-    Left = 71
-    Top = 103
+    Left = 104
+    Top = 116
     Width = 48
     Height = 13
     Caption = 'Resultado'
   end
   object edtEntrada: TEdit
-    Left = 71
-    Top = 76
+    Left = 104
+    Top = 85
     Width = 121
     Height = 21
     TabOrder = 0
-    TextHint = 'Digite a teperatura'
+    TextHint = 'Entre com um valor...'
   end
-  object btnCelsiusFahrenheit: TButton
-    Left = 226
-    Top = 72
-    Width = 150
+  object btnKmHoraParaMetroSegundo: TButton
+    Left = 252
+    Top = 73
+    Width = 90
     Height = 25
-    Caption = 'Celsius para Fahrenheit'
+    Caption = 'Km/h para m/s'
     TabOrder = 1
-    OnClick = btnCelsiusFahrenheitClick
+    OnClick = btnKmHoraParaMetroSegundoClick
   end
-  object btnFahrenheitCelsius: TButton
-    Left = 226
-    Top = 103
-    Width = 150
+  object btnMetroSegundoParaKmHHora: TButton
+    Left = 252
+    Top = 104
+    Width = 90
     Height = 25
-    Caption = 'Fahrenheit para Celsius'
+    Caption = 'm/s para K/h'
     TabOrder = 2
-    OnClick = btnFahrenheitCelsiusClick
+    OnClick = btnMetroSegundoParaKmHHoraClick
   end
 end
