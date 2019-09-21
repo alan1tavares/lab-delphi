@@ -13,4 +13,37 @@ object Form1: TForm1
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
+  object lblResultado: TLabel
+    Left = 71
+    Top = 103
+    Width = 48
+    Height = 13
+    Caption = 'Resultado'
+  end
+  object edtEntrada: TEdit
+    Left = 71
+    Top = 76
+    Width = 121
+    Height = 21
+    TabOrder = 0
+    TextHint = 'Digite a teperatura'
+  end
+  object btnCelsiusFahrenheit: TButton
+    Left = 226
+    Top = 72
+    Width = 150
+    Height = 25
+    Caption = 'Celsius para Fahrenheit'
+    TabOrder = 1
+    OnClick = btnCelsiusFahrenheitClick
+  end
+  object btnFahrenheitCelsius: TButton
+    Left = 226
+    Top = 103
+    Width = 150
+    Height = 25
+    Caption = 'Fahrenheit para Celsius'
+    TabOrder = 2
+    OnClick = btnFahrenheitCelsiusClick
+  end
 end
