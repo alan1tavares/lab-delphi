@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{EEBD87F2-AF4D-41BF-B4D3-707D0B2011E4}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Exercicio 01\dprExercicio01.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Exercicio 02\prjExercicio02.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="dprExercicio01">
+        <MSBuild Projects="Exercicio 01\dprExercicio01.dproj"/>
+    </Target>
+    <Target Name="dprExercicio01:Clean">
+        <MSBuild Projects="Exercicio 01\dprExercicio01.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dprExercicio01:Make">
+        <MSBuild Projects="Exercicio 01\dprExercicio01.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="prjExercicio02">
+        <MSBuild Projects="Exercicio 02\prjExercicio02.dproj"/>
+    </Target>
+    <Target Name="prjExercicio02:Clean">
+        <MSBuild Projects="Exercicio 02\prjExercicio02.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="prjExercicio02:Make">
+        <MSBuild Projects="Exercicio 02\prjExercicio02.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="dprExercicio01;prjExercicio02"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="dprExercicio01:Clean;prjExercicio02:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="dprExercicio01:Make;prjExercicio02:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
