@@ -8,7 +8,7 @@ uses
   System.SysUtils;
 
 const
-  RAIO_TERRA = 6378.1;
+  RAIO_TERRA = 6350;
 
 var
   Altura: real;
@@ -18,8 +18,8 @@ begin
 
   Writeln('Altura: ');
   Readln(Altura);
-
-  Distancia := SQRT(SQR(Altura) + (2.0 * Altura * 6378.1));
+  Altura := Altura / 1000;
+  Distancia := SQRT(SQR(Altura) + (2.0 * Altura * RAIO_TERRA));
 
   Writeln('Distância: ', FloatToStr(Distancia));
 
