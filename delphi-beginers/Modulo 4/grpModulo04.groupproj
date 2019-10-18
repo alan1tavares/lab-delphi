@@ -12,6 +12,12 @@
         <Projects Include="Exercicio03\dprExercicio03.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="Exercicio04\dprExercicio04.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Exercicio05\dprExercicio05.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -47,14 +53,32 @@
     <Target Name="dprExercicio03:Make">
         <MSBuild Projects="Exercicio03\dprExercicio03.dproj" Targets="Make"/>
     </Target>
+    <Target Name="dprExercicio04">
+        <MSBuild Projects="Exercicio04\dprExercicio04.dproj"/>
+    </Target>
+    <Target Name="dprExercicio04:Clean">
+        <MSBuild Projects="Exercicio04\dprExercicio04.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dprExercicio04:Make">
+        <MSBuild Projects="Exercicio04\dprExercicio04.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dprExercicio05">
+        <MSBuild Projects="Exercicio05\dprExercicio05.dproj"/>
+    </Target>
+    <Target Name="dprExercicio05:Clean">
+        <MSBuild Projects="Exercicio05\dprExercicio05.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dprExercicio05:Make">
+        <MSBuild Projects="Exercicio05\dprExercicio05.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="dprExercicio01;dprExercicio02;dprExercicio03"/>
+        <CallTarget Targets="dprExercicio01;dprExercicio02;dprExercicio03;dprExercicio04;dprExercicio05"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="dprExercicio01:Clean;dprExercicio02:Clean;dprExercicio03:Clean"/>
+        <CallTarget Targets="dprExercicio01:Clean;dprExercicio02:Clean;dprExercicio03:Clean;dprExercicio04:Clean;dprExercicio05:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="dprExercicio01:Make;dprExercicio02:Make;dprExercicio03:Make"/>
+        <CallTarget Targets="dprExercicio01:Make;dprExercicio02:Make;dprExercicio03:Make;dprExercicio04:Make;dprExercicio05:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
