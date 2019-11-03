@@ -1,0 +1,72 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{17364080-107F-417B-9CE5-89BB60613CF3}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Exercicio01\dprExercicio01.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Exercicio02\dprjExercicio02.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Exercicio03\dprjExercicio03.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="E:\lab-delphi\delphi-beginers\Modulo 5\Exercicio04\dprjExercicio04.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="dprExercicio01">
+        <MSBuild Projects="Exercicio01\dprExercicio01.dproj"/>
+    </Target>
+    <Target Name="dprExercicio01:Clean">
+        <MSBuild Projects="Exercicio01\dprExercicio01.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dprExercicio01:Make">
+        <MSBuild Projects="Exercicio01\dprExercicio01.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dprjExercicio02">
+        <MSBuild Projects="Exercicio02\dprjExercicio02.dproj"/>
+    </Target>
+    <Target Name="dprjExercicio02:Clean">
+        <MSBuild Projects="Exercicio02\dprjExercicio02.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dprjExercicio02:Make">
+        <MSBuild Projects="Exercicio02\dprjExercicio02.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dprjExercicio03">
+        <MSBuild Projects="Exercicio03\dprjExercicio03.dproj"/>
+    </Target>
+    <Target Name="dprjExercicio03:Clean">
+        <MSBuild Projects="Exercicio03\dprjExercicio03.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dprjExercicio03:Make">
+        <MSBuild Projects="Exercicio03\dprjExercicio03.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dprjExercicio04">
+        <MSBuild Projects="E:\lab-delphi\delphi-beginers\Modulo 5\Exercicio04\dprjExercicio04.dproj"/>
+    </Target>
+    <Target Name="dprjExercicio04:Clean">
+        <MSBuild Projects="E:\lab-delphi\delphi-beginers\Modulo 5\Exercicio04\dprjExercicio04.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dprjExercicio04:Make">
+        <MSBuild Projects="E:\lab-delphi\delphi-beginers\Modulo 5\Exercicio04\dprjExercicio04.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="dprExercicio01;dprjExercicio02;dprjExercicio03;dprjExercicio04"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="dprExercicio01:Clean;dprjExercicio02:Clean;dprjExercicio03:Clean;dprjExercicio04:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="dprExercicio01:Make;dprjExercicio02:Make;dprjExercicio03:Make;dprjExercicio04:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
