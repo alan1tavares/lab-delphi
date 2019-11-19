@@ -30,10 +30,37 @@ implementation
 procedure TfrmExercicio03.bttGravaArquivo02Click(Sender: TObject);
 var
   Arquivo01, Arquivo02: TextFile;
+  Linha: string;
+  Soma: integer;
+  NumeroAtual: integer;
+  SomaIsPar: boolean;
 begin
   AssignFile(Arquivo01, edtArquivo01.Text);
-  Reset(Arquivo01);
+  AssignFile(Arquivo02, edtArquivo02.Text);
 
+  Reset(Arquivo01);
+  Rewrite(Arquivo02);
+
+  while not SeekEof(Arquivo01) do
+  begin
+    Soma := 0;
+    Linha := '';
+
+    while not SeekEoln(Arquivo01) do
+    begin
+      Read(Arquivo01, NumeroAtual);
+      Linha :=  IntToStr(NumeroAtual) + ' ' + Linha;
+      Soma := Soma + NumeroAtual;
+    end;
+
+    SomaIsPar := (Soma Mod 2) = 0;
+    if SomaIsPar then
+      Writeln(Arquivo02, Linha);
+  end;
+
+  CloseFile(Arquivo01);
+  CloseFile(Arquivo02);
 end;
+
 
 end.
